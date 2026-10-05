@@ -49,19 +49,6 @@ a{color:inherit}
 ::selection{background:var(--brass);color:var(--on-accent)}
 :focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:2px}
 
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){color-scheme:light;
-  --ground:#f6f2ea;
-  --surface:#fffdf8;
-  --line:#e0d9cb;
-  --ivory:#16203a;
-  --muted:#4d5670;
-  --brass:#94702f;
-  --brass-dim:rgba(148,112,47,.13);
-  --brass-hi:#7d5d24;
-  --on-accent:#fffdf8;
-  --header-bg:rgba(246,242,234,.9);
-  --tick:22,32,58;
-  --twill:rgba(22,32,58,.025);}}
 :root[data-theme="light"]{color-scheme:light;
   --ground:#f6f2ea;
   --surface:#fffdf8;
@@ -353,7 +340,6 @@ section.has-cine{padding-top:0}
 .theme-btn .i-moon{display:none}
 :root[data-theme="light"] .theme-btn .i-sun{display:none}
 :root[data-theme="light"] .theme-btn .i-moon{display:block}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .theme-btn .i-sun{display:none}:root:not([data-theme="dark"]) .theme-btn .i-moon{display:block}}
 /* roles band */
 .roles-band{position:relative;overflow:hidden;padding-block:96px;background:radial-gradient(120% 140% at 0% 0%,var(--brass-dim),transparent 55%),var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .rb-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:10px}
@@ -802,12 +788,11 @@ section.has-cine{padding-top:0}
 <script>
 (function(){
   var body=document.body,root=document.documentElement;
-  function curTheme(){var t=root.getAttribute('data-theme');if(t)return t;return matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
+  function curTheme(){return root.getAttribute('data-theme')==='light'?'light':'dark'}
   function syncMeta(){var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',curTheme()==='light'?'#f6f2ea':'#0f1626')}
   try{var st=localStorage.getItem('lp-theme');if(st==='light'||st==='dark')root.setAttribute('data-theme',st)}catch(e){}
   syncMeta();
   document.getElementById('themeBtn').addEventListener('click',function(){var n=curTheme()==='light'?'dark':'light';root.setAttribute('data-theme',n);try{localStorage.setItem('lp-theme',n)}catch(e){}syncMeta()});
-  matchMedia('(prefers-color-scheme: light)').addEventListener&&matchMedia('(prefers-color-scheme: light)').addEventListener('change',syncMeta);
   function setLang(l){
     body.setAttribute('data-lang',l);
     document.documentElement.lang=l==='id'?'id':'en';
