@@ -180,6 +180,10 @@ a.copy{text-decoration:none;display:inline-block}
 .edu-list.shows{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px}
 .edu-list .reel{width:100%;max-width:340px;margin-top:14px}
 .projects{align-items:start}
+.proj.elevate{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:44px;row-gap:14px;align-content:start}
+.proj.elevate>*{grid-column:1}
+.proj.elevate .stories{grid-column:2;grid-row:1/span 5;align-self:start;margin-top:0}
+.proj.elevate .stories.single .story-item{flex-basis:100%;max-width:300px}
 .edu-list strong{display:block;font:600 16px/1.35 var(--body);margin-bottom:4px}
 .edu-list .note{display:block;color:var(--muted);font-size:16px;line-height:1.55;margin-bottom:8px}
 
@@ -393,6 +397,8 @@ section.has-cine{padding-top:0}
   .proj-cine{height:200px}
   .proj-cine .cine-cap{left:20px}
   .films{grid-template-columns:minmax(0,1fr)}
+  .proj.elevate{grid-template-columns:minmax(0,1fr)}
+  .proj.elevate .stories{grid-column:1;grid-row:auto}
   .story-item{flex-basis:62vw}
   .stories.single .story-item{flex-basis:70vw}
   .stories.edu .story-item{flex-basis:56vw}
@@ -660,7 +666,7 @@ section.has-cine{padding-top:0}
             </figure>
           </div>
         </article>
-        <article class="proj reveal">
+        <article class="proj wide elevate reveal">
           <div class="wave" aria-hidden="true"></div>
           <span class="tag"><span class="en">Brand campaign</span><span class="id">Kampanye brand</span></span>
           <h3>DJ Yasmin × Pronto Moda "ELEVATE"</h3>
@@ -674,20 +680,6 @@ section.has-cine{padding-top:0}
               <a class="ig-link" href="https://www.instagram.com/reel/CqX2qiMJviG/" target="_blank" rel="noopener"><span class="en">View on Instagram</span><span class="id">Lihat di Instagram</span> ↗</a>
             </figure>
           </div>
-        </article>
-        <article class="proj reveal">
-          <svg class="curtain" viewBox="0 0 400 90" preserveAspectRatio="none" aria-hidden="true">
-            <rect width="400" height="90" style="fill:var(--surface)"/>
-            <ellipse cx="200" cy="80" rx="80" ry="9" style="fill:var(--brass)" fill-opacity=".3"/>
-            <polygon points="194,0 206,0 250,82 150,82" style="fill:var(--ivory)" fill-opacity=".08"/>
-            <g style="fill:var(--ivory)"><circle cx="200" cy="52" r="4"/><rect x="196" y="57" width="8" height="20" rx="4"/></g>
-            <g class="cur-l" style="fill:var(--brass)" fill-opacity=".28"><path d="M0 0H200V90C170 90 160 70 150 90C130 90 120 70 100 90C80 90 70 70 50 90C30 90 20 70 0 90Z"/></g>
-            <g class="cur-r" style="fill:var(--brass)" fill-opacity=".28"><path d="M200 0H400V90C380 70 370 90 350 90C330 70 320 90 300 90C280 70 270 90 250 90C230 70 220 90 200 90Z"/></g>
-            <rect width="400" height="8" style="fill:var(--brass)" fill-opacity=".6"/>
-          </svg>
-          <span class="tag"><span class="en">Entertainment partnership</span><span class="id">Kemitraan hiburan</span></span>
-          <h3>Sigma Entertainment Bali</h3>
-          <p><span class="en">A commercial relationship with the Bali entertainment group, producing costume and wardrobe for live shows and stage performances. I translated performance concepts into wardrobe that production teams could deliver.</span><span class="id">Hubungan komersial dengan grup hiburan asal Bali untuk produksi kostum dan wardrobe pertunjukan live dan panggung. Saya menerjemahkan konsep pertunjukan menjadi wardrobe yang dapat diproduksi tim.</span></p>
         </article>
         <article class="proj wide reveal">
           <span class="tag"><span class="en">Education partnerships &amp; customer acquisition</span><span class="id">Kemitraan pendidikan &amp; akuisisi pelanggan</span></span>
